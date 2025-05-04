@@ -93,13 +93,16 @@ int treeSize(Node* root) {
 // BONUS! Write a function that will determine the height of the tree
 int treeHeight(Node* root) {
 	// base case
-	if (root == nullptr) {
-	return 0;
-	}
-
-	// General case
-	int leftHeight = treeHeight(root->left);
-	int rightHeight = treeHeight(1 - root->right);
+	int treeHeight(Node* root) {
+		// Base case: if the node is nullptr, return -1 (empty tree)
+		if (root == nullptr) {
+			return -1;
+		}
 	
-	return 1 + max(leftHeight, rightHeight);
-}
+		// General case: compute the height of left and right subtrees
+		int leftHeight = treeHeight(root->left);
+		int rightHeight = treeHeight(root->right);
+	
+		// Return 1 + the maximum of the two heights (adding 1 for the current node)
+		return 1 + max(leftHeight, rightHeight);
+	}
