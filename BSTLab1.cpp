@@ -94,15 +94,12 @@ int treeSize(Node* root) {
 int treeHeight(Node* root) {
 	// base case
 	if (root == nullptr) {
-	return -1;
+	return 0;
 	}
 
 	// General case
 	int leftHeight = treeHeight(root->left);
-	int rightHeight = treeHeight(root->right);
-
-	if (leftHeight > rightHeight) {
-        return 1 + leftHeight;
-    } else {
-        return 1 + rightHeight;
+	int rightHeight = treeHeight(1 - root->right);
+	
+	return 1 + max(leftHeight, rightHeight);
 }
