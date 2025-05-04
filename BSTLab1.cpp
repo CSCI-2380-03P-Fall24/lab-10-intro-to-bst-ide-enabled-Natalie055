@@ -74,7 +74,6 @@ bool searchTree(int target, Node* root) {
 		return searchTree(target, root->right);
 	}
 	}
-}
 
 // Write a function that will return the total number of Nodes in the tree
 // 	input: pointer to the root Node
