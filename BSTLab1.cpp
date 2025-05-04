@@ -100,5 +100,9 @@ int treeHeight(Node* root) {
 	// General case
 	int leftHeight = treeHeight(root->left);
 	int rightHeight = treeHeight(root->right);
-	return 1 + max(leftHeight, rightHeight);
+
+	if (leftHeight > rightHeight) {
+        return 1 + leftHeight;
+    } else {
+        return 1 + rightHeight;
 }
