@@ -47,9 +47,8 @@ Node* createTree() {
 	// level 3 (children of 15)
 	root->right->left->right = new Node(18);
 	// level 3 (children of 99)
-	
+	root->right->right->left = new Node(19);
 	// level 4 (children of 18)
-	root->right->left->right->right = new Node(19);
 	return root;
 }
 
