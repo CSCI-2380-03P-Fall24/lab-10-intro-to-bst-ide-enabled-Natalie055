@@ -83,7 +83,7 @@ bool searchTree(int target, Node* root) {
 int treeSize(Node* root) {
 	// base case
 	if (root == nullptr) {
-	return  0;
+	return  -1;
 	} else {
 	// General case
 	return 1 + treeSize(root->left) + treeSize(root->right);
@@ -94,7 +94,7 @@ int treeSize(Node* root) {
 int treeHeight(Node* root) {
 	// base case
 	if (root == nullptr) {
-	return -1;
+	return 0;
 	}
 
 	// General case
