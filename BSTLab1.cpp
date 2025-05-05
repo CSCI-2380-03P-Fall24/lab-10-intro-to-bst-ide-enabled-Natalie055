@@ -47,7 +47,7 @@ Node* createTree() {
 	// level 3 (children of 15)
 	root->right->left->right = new Node(18);
 	// level 3 (children of 99)
-
+	
 	// level 4 (children of 18)
 	root->right->left->right->right = new Node(19);
 	return root;
@@ -93,16 +93,13 @@ int treeSize(Node* root) {
 // BONUS! Write a function that will determine the height of the tree
 int treeHeight(Node* root) {
 	// base case
-	int treeHeight(Node* root) {
-		// Base case: if the node is nullptr, return -1 (empty tree)
-		if (root == nullptr) {
-			return -1;
-		}
-	
-		// General case: compute the height of left and right subtrees
-		int leftHeight = treeHeight(root->left);
-		int rightHeight = treeHeight(root->right);
-	
-		// Return 1 + the maximum of the two heights (adding 1 for the current node)
-		return 1 + max(leftHeight, rightHeight);
+	if (root == nullptr) {
+	return -1;
 	}
+
+	// General case
+	int leftHeight = treeHeight(root->left);
+	int rightHeight = treeHeight(root->right);
+	
+	return 1 + max(leftHeight, rightHeight);
+}
